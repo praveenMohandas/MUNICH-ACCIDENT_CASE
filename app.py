@@ -11,7 +11,7 @@ def home_page():
     
     user_query=str(request.args.get('month'))
     
-    df = pd.read_csv('/Users/praveenmohandas/Downloads/monatszahlen2209_verkehrsunfaelle.csv')
+    df = pd.read_csv('/monatszahlen2209_verkehrsunfaelle.csv')
     df = df[df['JAHR'] <= 2020]
     df.drop(['VORJAHRESWERT','VERÄND_VORMONAT_PROZENT','VERÄND_VORJAHRESMONAT_PROZENT','ZWÖLF_MONATE_MITTELWERT'],axis=1,inplace=True)
     df=df[df['MONAT']!= 'Summe']
@@ -36,4 +36,4 @@ def home_page():
 
 
 if __name__ =='__main__':
-    app.run(port=8081)
+    app.run(port=8080)
